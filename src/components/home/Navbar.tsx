@@ -11,7 +11,7 @@ export const Navbar = () => {
         </div>
     <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-            <img src="/logo.png" width="50" height="59" alt="" />
+            <Image src="/logo.png" width="50" height="59" alt="" />
             <div>
                 <h1>SERVIMIX</h1>
                 <p>De lo que necesitas, a quien lo hace</p>
