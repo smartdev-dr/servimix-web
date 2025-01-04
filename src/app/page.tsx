@@ -13,15 +13,15 @@ import Link from "next/link";
 function App() {
   return (
 
-   
-    <><Navbar />
-    <Banner />
-    <MainOffers/>
-    <ServicesSection/>
-    <MainServices/>
-    <MainCompany/>
-    <Footer/>
-    
+
+    <>
+      <Navbar />
+      <Banner />
+      <MainOffers />
+      <ServicesSection />
+      <MainServices />
+      <MainCompany />
+      <Footer />
     </>
 
 

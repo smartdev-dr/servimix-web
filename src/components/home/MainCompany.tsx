@@ -1,6 +1,6 @@
 const ServicioPago = () => {
     return (
-      <div className="w-full p-6 ml-10">
+      <div className="w-full p-6 ">
       {/* Sección superior */}
       <div className="flex flex-col md:flex-row items-start gap-6">
         {/* Imagen */}

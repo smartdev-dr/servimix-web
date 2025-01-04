@@ -3,7 +3,7 @@ import { Services } from '../DataCards/CardsData';
 
 export const ServicesSection =() => {
     return (
-        <section className='py-10 px-6 lg:px-16 xl:px-32'>
+        <section className='py-10 md:px-10'>
             <div className='text-center mb-10'>
                 <h2 className='text-3xl font-bold text-gray-900 mb-6'>Los mejores calificados</h2>
                 <p className='text-gray-500 mb-10'> Los servicios mejor calificados por nuestros clientes</p>

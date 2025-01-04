@@ -1,89 +1,99 @@
-import Image from 'next/image';
-import { slides } from './databanner/slides';
+import { useState, useEffect } from "react";
+import { Button } from "../ui/button";
+
+const slides = [
+  {
+    id: 1,
+    title: "Soluciones rapidas y seguras para tus proyectos y hogar. Todo en un mismo lugar ",
+    subtitle: "",
+    image: "/img/banner_1.png",
+  },
+  {
+    id: 2,
+    title: "Soluciones rapidas y seguras para tus proyectos y hogar. Todo en un mismo lugar ",
+    subtitle: "",
+    image: "/img/banner_2.png",
+  },
+  {
+    id: 3,
+    title: "Soluciones rapidas y seguras para tus proyectos y hogar. Todo en un mismo lugar ",
+    subtitle: "",
+    image: "/img/banner_4_2.jpg",
+  },
+];
 
 const Banner = () => {
-  
-  let currentSlide = 0;
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handleNext = () => {
-    const slidesContainer = document.querySelector("#slides-container");
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlides(slidesContainer);
-  };
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   const handlePrev = () => {
-    const slidesContainer = document.querySelector("#slides-container");
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlides(slidesContainer);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const updateSlides = (container) => {
-    const offset = -currentSlide * 100;
-    container.style.transform = `translateX(${offset}%)`;
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   return (
-    <div className="w-full relative overflow-hidden mt-10">
-      <div id="slides-container" className=" flex-grow transition-transform duration-500 px-6 lg:px-16 xl:px-32 sm:px-16 ">
+    <div className="relative w-full h-[300px] overflow-hidden mt-3 ">
+      {/* Contenedor de los slides */}
+      <div
+        className="flex w-full h-full transition-transform duration-500"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
         {slides.map((slide) => (
-            <div key={slide.id} className="flex-grow w-full flex gap-8 items-center m-10 ">
-              {/* <div className='relative flex-grow rounded-xl overflow-hidden'> */}
-
-              <Image
-              
-                src={slide.imageUrl}
-                alt={`Slide ${slide.id}`}
-                // width={944}
-                // height={222}
-                layout="fill"
-                objectFit="cover"
-                className='rounded-xl relative flex-grow overflow-hidden'
-                
-              />
-              {/* </div> */}
-            {/* <div className="bg-black text-white flex flex-col justify-center p-20 w-1/2 rounded-l-xl"> */}
-            {/* </div> */}
-            <div className="w-96 relative">
-              <h2 className="text-xl md:text-2xl lg:text-3xl text-white font-bold mb-2 flex-grow">{slide.title}</h2>
-              {slide.description && <p className=" text-sm md:text-base lg:text-lg text-white">{slide.description}</p>}
-              <div className='mt-20'>
-              <button className="bg-white text-black px-4 py-2 border border-black w-44">
-                {slide.buttonText}
-              </button>
-              </div>
+          <div
+            key={slide.id}
+            className="min-w-full h-full flex px-5 bg-cover bg-cente rounded-lg md:mx-4"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="md:p-6 rounded mt-10">
+              <p className="text-white text-xs md:text-sm font-normal">sertemi</p>
+              <p className="text-white md:text-xl font-bold md:max-w-sm  max-w-[120px]">
+                {slide.title}
+              </p>
+              <p className="text-white text-sm mt-4">
+                {slide.subtitle}
+              </p>
+              <Button className=" bg-white text-black  px-6 py-2 mt-3 md:mt-10">
+            Contactar ahora
+            </Button>
             </div>
+         
           </div>
         ))}
-      </div> 
+      </div>
 
-      
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
-        &#8249;
+        &#8592;
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
-        &#8250;
+        &#8594;
       </button>
 
-      
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 w-full flex justify-center space-x-2">
         {slides.map((_, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => {
-              currentSlide = index;
-              const slidesContainer = document.querySelector("#slides-container");
-              updateSlides(slidesContainer);
-            }}
-            className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? 'bg-black' : 'bg-gray-400'
-            }`}
-          />
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === index
+              ? "bg-white"
+              : "bg-gray-400 hover:bg-white"
+              }`}
+          ></div>
         ))}
       </div>
     </div>
