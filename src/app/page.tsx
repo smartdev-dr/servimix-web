@@ -15,13 +15,12 @@ function App() {
 
 
     <>
-      <Navbar />
       <Banner />
       <MainOffers />
       <ServicesSection />
       <MainServices />
       <MainCompany />
-      <Footer />
+
     </>
 
 
