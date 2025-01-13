@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>         
           </div>
         </div>
-        <div className="w-11/12 h-[1px] bg-gray-400 ml-10"></div>
+        <div className=" h-[1px] bg-gray-400 ml-10"></div>
       </footer>
     );
   };
