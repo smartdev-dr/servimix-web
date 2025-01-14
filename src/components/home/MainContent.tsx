@@ -4,12 +4,12 @@ import { Services } from './DataCards/CardsData';
 
 
 
-export const MainServices = () => {
+export const MainServices = ({titulo = '', servicio = ''}) => {
     return (
         <section className='py-10 md:px-10'>
         <div className='text-center mb-10'>
-            <h2 className='text-3xl font-bold text-gray-900 mb-6'>Los más buscados</h2>
-            <p className='text-gray-500 mb-10'> Los servicios más buscados por nuestros clientes</p>
+            <h2 className='text-3xl font-bold text-gray-900 mb-6'>{titulo}</h2>
+            <p className='text-gray-500 mb-10'> {servicio}</p>
              <div>
             
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>

@@ -7,7 +7,8 @@ const Service = () => {
     <div className="md:p-10">
     <ServiceGallery/>
     <VariacionesCard/>
-    <ReseñasCard/>
+    <ReseñasCard titulo="Reseñas del servicio"/>
+    <button className="justify-center py-2 text-center bg-primary-500 text-white border border-gray-300 font-bold rounded-lg bg-orange-400 mt-10 mb-10 w-full">Solicitar servicio</button>
     </div>
   )
 }

@@ -15,7 +15,7 @@ function App() {
       <Banner />
       <MainOffers />
       <ServicesSection />
-      <MainServices />
+      <MainServices titulo="Los más buscados" servicio="Los servicios más buscados por nuestros clientes"/>
       <MainCompany />
 
     </>

@@ -3,30 +3,30 @@ import Image from "next/image"
 
 const ServiceGallery = () => {
     return (
-      <div className="flex gap-5 my-5 w-full">
+      <div className="flex gap-5 my-5 w-full md:grid-cols-2 sm:grid-cols-1 ">
         {/* Sección superior */}
         <div className="">
           {/* Imagen */}
-          <div className="max-w-[800px] h-[400px] bg-gray-300 rounded-lg"></div>
-          <div className="grid grid-cols-5 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-5">
+          <div className="max-w-[900px] h-[400px] bg-gray-300 rounded-lg"></div>
+          <div className="grid grid-cols-4 gap-2 mt-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 gap-8">
           <div className="bg-gray-300 w-[100px] h-[30] rounded-lg"></div>
           <div className="bg-gray-300 w-[100px] h-16 rounded-lg"></div>
           <div className="bg-gray-300 w-[100px] h-16 rounded-lg"></div>
           <div className="bg-gray-300 w-[100px] h-16 rounded-lg"></div>
-          <div className="bg-gray-300 w-[100px] h-16 rounded-lg"></div>
+          
         </div>
           
     
         </div>
               {/* Texto */}
-              <div className="">
+        <div className="">
             <h2 className="text-3xl font-bold text-gray-800">Lavado de autos adomicilio</h2>
             <p className="text-gray-600 mt-2 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero lacus, sed dapibus lacus euismod ac. 
               In ultrices, <br /> diam at pretium dignissim, diam magna vehicula nisi, feugiat commodo <br /> odio urna vitae diam. Pellentesque 
               porttitor turpis at porttitor sagittis. <br /> Donec tincidunt.
             </p>
-            <div className='grid grid-cols-1 md:grid-cols-2 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2'>
                 {Services.map((service) => (
                  <div key={service.id} className='bg-white rounded-xl  overflow-hidden'> 
                     <div className='flex items-center p-4 '>
@@ -42,20 +42,13 @@ const ServiceGallery = () => {
                             <div className='flex items-center text-sm text-gray-500'>
                             <span className='text-yellow-500 mr-1'> {"★".repeat(service.provider.rating)}</span>
                             <span>{service.provider.reviews} reviews</span>
-                    </div>
-                        
-                                                            </div>
-                                                        </div>
-                        
-                                                    </div>
-                                                ))}
-                                                
-                                            </div>
-            
-
+                            </div> 
+                            </div>
+                     </div>      
+                </div>
+               ))}                               
+              </div>
           </div>
-  
-        
       </div>
     )
   }
