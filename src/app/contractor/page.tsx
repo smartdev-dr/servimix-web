@@ -9,8 +9,6 @@ const Contractor = () => {
         <ReseñasCard titulo="Reseñas del contratista"/>
         <MainServices titulo="Servicios"/>   
         <button className="justify-center py-2 text-center bg-primary-500 text-white border border-gray-300 font-bold rounded-lg bg-orange-400 mt-10 mb-10 w-full">Solicitar cotización</button>
-
-
     </div>
   )
 }

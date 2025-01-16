@@ -14,14 +14,10 @@ function App() {
     <>
       <Banner />
       <MainOffers />
-      <ServicesSection />
+      <ServicesSection titulo="Los mejores calificados" parrafo="Los servicios mejores calificados por nuestros clientes"/>
       <MainServices titulo="Los más buscados" servicio="Los servicios más buscados por nuestros clientes"/>
       <MainCompany />
-
     </>
-
-
-
     // <div>
     //   "Aqui Julio elimina esto y has el landing page"
     //   <Link href="/dashboard">
