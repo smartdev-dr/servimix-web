@@ -69,7 +69,26 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.hero-image {
+  background-image: url("/img/banner_1.png");
+  transition: ease-in;
+  background-size: cover;
+  will-change: transform;
+  transition-duration: 1s;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition-timing-function: ease;
+  transition-property: transform, background; 
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+
 }
